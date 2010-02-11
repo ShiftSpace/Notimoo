@@ -1,3 +1,7 @@
+// ==Builder==
+// @required
+// ==/Builder==
+
 /*
 Script: Notimoo.js
 	Notimoo - Notification system using Mootools (1.2)
