@@ -78,6 +78,7 @@ var Notimoo = new Class({
      *	@param Number notificationOpacity -> opacity used when the notification is displayed (defaults to 0.95)
      *  @param Function onShow -> callback to be executed when the notification is displayed. The notification element is passed as a parameter.
      *  @param Function onClose -> callback to be executed when the notification id closed. The notification element is passed as a parameter.
+     *  @param Boolean closeOnClick -> flag for closing the notification on click (defaults to true)
      */
     options: {
         parent: '', // This value needs to be set into the initializer
@@ -92,7 +93,8 @@ var Notimoo = new Class({
         opacityTransitionTime : 750,
         closeRelocationTransitionTime: 750,
         scrollRelocationTransitionTime: 500,
-        notificationOpacity : 0.95 /*,
+        notificationOpacity : 0.95,
+        closeOnClick: true /*,
         onShow: $empty,
         onClose: $empty */
     },
@@ -167,10 +169,12 @@ var Notimoo = new Class({
         el.store('scrollTween', fx2);
 
         // Close the notification when the user click inside
-        el.addEvent('click', function(event) {
-            event.stop();
-            this.close(el);
-        }.bind(this));
+        if(this.options.closeOnClick) {
+            el.addEvent('click', function(event) {
+                event.stop();
+                this.close(el);
+            }.bind(this));
+        }
 
         return el;
     },
