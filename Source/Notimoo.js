@@ -221,8 +221,8 @@ var Notimoo = new Class({
        }
        el.getElement('div.message').set('html', options.message);
 
-	   // Add custom classes
-	   if (options.customClasses) el.addClass(customClasses);
+       // Add custom classes
+       if (options.customClasses) el.addClass(options.customClasses);
 
        // Once the notification is populated, we check to see if there is any link inside so we can
        // configure it in order not to close the notification when it's clicked
