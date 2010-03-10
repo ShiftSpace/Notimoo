@@ -82,7 +82,7 @@ var Notimoo = new Class({
      */
     options: {
         parent: '', // This value needs to be set into the initializer
-        height: 50,
+        height: 54,
         width: 300,
         visibleTime: 5000, // notifications are visible for 5 seconds by default
         locationVType: 'top',
